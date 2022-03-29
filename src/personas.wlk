@@ -4,6 +4,8 @@ object olivia {
 	method recibeMasajes(){
 		concentracion +=3
 	}
+	method tomaBanioDeVapor(){
+	}
 	method discute(){
 		concentracion -=1
 	}
@@ -37,7 +39,7 @@ object bruno{
 		esFeliz = false
 	}
 	method estaPerfecto(){
-		return esFeliz and tieneSed and (peso > 50 and peso < 70)
+		return esFeliz and !tieneSed and (peso > 50000 && peso < 70000)
 	}
 	method mediodiaEnCasa(){
 		self.comeFideos()
