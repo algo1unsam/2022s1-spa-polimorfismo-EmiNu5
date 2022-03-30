@@ -1,17 +1,17 @@
 object olivia {
-	var concentracion = 6
+	var gradoDeConcentracion = 6
 	
 	method recibeMasajes(){
-		concentracion +=3
+		gradoDeConcentracion +=3
 	}
 	method tomaBanioDeVapor(){
 	}
 	method discute(){
-		concentracion -=1
+		gradoDeConcentracion -=1
 	}
 	
 	method gradoDeConcentracion(){
-		return concentracion
+		return gradoDeConcentracion
 	}
 }
 object bruno{
@@ -21,16 +21,17 @@ object bruno{
 	method recibeMasajes(){
 		esFeliz = true
 	}
-	method tomaBanioDeVapor(){
+	method tomaBanioDeVapor(){//mensaje
+		//implementacion
 		peso -= 500
 		tieneSed = true
 	}
 	method tomaAgua(){
-		tieneSed = true
+		tieneSed = false
 	}
 	method comeFideos(){
 		peso += 250
-		tieneSed = false
+		tieneSed = true
 	}
 	method corre(){
 		peso -=300
@@ -39,7 +40,9 @@ object bruno{
 		esFeliz = false
 	}
 	method estaPerfecto(){
-		return esFeliz and !tieneSed and (peso > 50000 && peso < 70000)
+		const pesoMin = 50000
+		const pesoMax = 70000
+		return esFeliz and !tieneSed and peso.between(pesoMin,pesoMax)
 	}
 	method mediodiaEnCasa(){
 		self.comeFideos()
@@ -48,14 +51,12 @@ object bruno{
 	}
 }
 object ramiro {
-	var contractura = 8
+	var contractura = 0
 	var pielGrasa = false
 		
 	method recibeMasajes(){
-		contractura -=1
-		if (contractura < 0){
-			contractura = 0
-		}
+		contractura -=2
+		contractura = contractura.max(0)
 	}
 	method tomaBanioDeVapor(){
 		pielGrasa = false
